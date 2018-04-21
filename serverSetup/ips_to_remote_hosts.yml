@@ -1,0 +1,24 @@
+---
+- hosts: [servers]
+  tasks:
+  - name: insert text from ips into remote /etc/hosts
+    blockinfile:
+      block: "{{lookup('file','./ips')}}"
+      dest: "/etc/hosts"
+
+# ansible-playbook ips_to_remote_hosts.yml -b
+
+
+#  - name: read local file and reg into data variable
+#    shell: cat ./ips
+#    register: data
+#  - name: insert text from ips into remote /etc/hosts
+#    blockinfile:
+#      dest: /etc/hosts
+##      marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+#      block: |
+#        {{ data.stdout }}
+
+
+
+

@@ -1,0 +1,53 @@
+---
+
+- hosts: host0
+  tasks:
+    - name: Create 2048-bit SSH key for user  in /etc/ssh/.id_rsa
+      user:
+        name: ubuntu
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: /etc/ssh/.id_rsa
+      become: yes
+- hosts: servers
+  become: yes
+  tasks:
+    - name: mount extra volume - step 1
+      shell: mkdir -m 777 /mnt/extra
+    - name: mount extra volume - step 2
+      shell: mkfs.ext4 /dev/vdc
+    - name: mount extra volume - step 3
+      shell: mount /dev/vdc /mnt/extra
+
+- hosts: host0
+  become: yes
+  tasks:
+    - name: mount nfs volume - step 1
+      shell: mkdir -m 777 /share
+    - name: mount nfs volume - step 2
+      shell: mkfs.ext4 /dev/vdd
+    - name: mount nfs volume - step 3
+      shell: mount /dev/vdd /share
+    - name: Install nfs-server
+      apt: pkg=nfs-server state=present
+    - name: export share folder
+      shell: echo "/share *(rw,sync)"|tee /etc/exports
+    - name: Restart service
+      shell: service nfs-kernel-server restart
+
+- hosts: host1, host2, host3
+  tasks:
+    - name: Install nfs-client
+      apt: pkg=nfs-client state=present
+      become: yes
+    - name: Setup share folder
+      shell: mkdir -m 777 /share
+      become: yes
+    - name: Mount folders to host0
+      shell: echo 'host0:/share /share nfs' | tee -a /etc/fstab
+      become: yes
+    - name: Apply mounting
+      shell: mount -a
+      become: yes
+
+

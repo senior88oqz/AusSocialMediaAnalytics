@@ -1,0 +1,17 @@
+---
+- hosts: servers
+  tasks:
+    - name: Install gcc
+      apt: pkg=build-essential state=present
+      become: yes
+
+    - name: Install pip3
+      apt: pkg=python3-pip state=present
+      become: yes
+
+    - name: Install virtualenv
+      shell: pip3 install virtualenv
+
+    - name: Install screen
+      apt: pkg=screen state=present
+      become: yes
