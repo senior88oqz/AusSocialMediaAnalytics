@@ -20,5 +20,10 @@
 #        {{ data.stdout }}
 
 
-
-
+#- hosts: [servers]
+#  tasks:
+#  - name: activate bash insulter
+#    blockinfile:
+#      block: "{{lookup('file','./insulter')}}"
+#      dest: "/etc/bash.bashrc"
+#    become: yes
