@@ -42,6 +42,18 @@
 #      shell: apt-get install -y jq
 #      become: yes
 
+#    - name: CouchDB
+#      shell: sudo /share/dbSetup/CouchdbClusterSetup.sh
+#      become: yes
+
+    - name: rmCouchDB
+      shell: /share/dbSetup/rmDockers.sh
+      become: yes
+
+    - name: CouchDB
+      shell: /share/dbSetup/dbSetup2.sh
+      become: yes
+
 
 
 

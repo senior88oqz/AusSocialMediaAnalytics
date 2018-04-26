@@ -1,0 +1,16 @@
+---
+- hosts: servers
+  tasks:
+
+    - name: set IP env
+      blockinfile:
+        path: /home/ubuntu/.bashrc
+        block: |
+          export IP=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
+      become: yes
+
+#    - name: append IP env to docker
+#      shell: echo "DOCKER_OPTS=\"--bip=$IP/22\"" |tee -a /etc/default/docker
+##      environment:
+##        IP: $(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
+#      become: yes
