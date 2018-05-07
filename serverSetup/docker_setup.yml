@@ -1,0 +1,61 @@
+---
+- hosts: servers
+  tasks:
+#    - name: Install docker - 1
+#      shell: apt-get update
+#      become: yes
+#
+#    - name: Install docker - 2
+#      shell: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+#      become: yes
+#
+#    - name: Install docker - 3
+#      shell: apt-get update
+#      become: yes
+#
+#    - name: Install docker - 4
+#      shell: apt-get install -y --allow-unauthenticated docker-ce
+#      become: yes
+#
+#    - name: Install docker - 5
+#      shell: docker run hello-world
+#      become: yes
+## https://www.linux.com/blog/learn/intro-to-linux/how-install-docker-ce-your-desktop
+
+
+#    - name: Install nodejs &npm
+#      shell: curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+
+#    - name: Install nodejs &npm
+#      shell: bash nodesource_setup.sh
+#      become: yes
+
+#    - name: Install nodejs &npm
+#      shell: apt-get install -y nodejs
+#      become: yes
+
+#    - name: Install nodejs &npm
+#      shell: npm install -g grunt
+#      become: yes
+#
+#    - name: Install nodejs &npm
+#      shell: apt-get install -y jq
+#      become: yes
+
+#    - name: CouchDB
+#      shell: sudo /share/dbSetup/CouchdbClusterSetup.sh
+#      become: yes
+
+#    - name: rmCouchDB
+#      shell: /share/dbSetup/rmDockers.sh
+#      become: yes
+
+    - name: CouchDB
+      shell: /share/dbSetup/dbSetup2.sh
+      become: yes
+
+
+
+
+
+

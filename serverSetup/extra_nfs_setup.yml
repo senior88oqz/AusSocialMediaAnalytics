@@ -9,6 +9,7 @@
         ssh_key_bits: 2048
         ssh_key_file: /etc/ssh/.id_rsa
       become: yes
+
 - hosts: servers
   become: yes
   tasks:

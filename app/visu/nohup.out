@@ -1,0 +1,31 @@
+<Database 'tweets'>
+number of tweets: 1000
+Process 27911 dead!
+Process 27911 detected
+[nltk_data] Downloading package wordnet to /home/ubuntu/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to /home/ubuntu/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+<Database 'tweets'>
+number of tweets: 1000
+(0, '0.088*"http" + 0.006*"australia" + 0.005*"register" + 0.005*"gq4m3v6ber" + 0.004*"think" + 0.003*"world"')
+(1, '0.070*"http" + 0.006*"today" + 0.005*"great" + 0.005*"right" + 0.004*"first" + 0.004*"kuranda"')
+(2, '0.046*"http" + 0.010*"beautiful" + 0.006*"#australia" + 0.006*"@tutulsa" + 0.006*"@lo2bsh" + 0.006*"@adamsfantasy"')
+(3, '0.031*"http" + 0.010*"#closingceremony" + 0.005*"#gc2018" + 0.004*"change" + 0.004*"#auspol" + 0.004*"trump"')
+(4, '0.048*"http" + 0.009*"thanks" + 0.004*"years" + 0.004*"cairn" + 0.004*"island" + 0.003*"please"')
+(5, '0.051*"http" + 0.006*"hobart" + 0.006*"think" + 0.006*"weapon" + 0.005*"beautiful" + 0.003*"morning"')
+(6, '0.066*"http" + 0.005*"trinity" + 0.005*"inlet" + 0.005*"@kelliekelly23" + 0.005*"@primabaci" + 0.005*"@ozprotectionist"')
+(7, '0.068*"http" + 0.015*"@ruraldoctorsaus" + 0.015*"@acrrm" + 0.014*"@rda_tas" + 0.013*"@rusticautas" + 0.010*"@qldrgp"')
+(8, '0.023*"http" + 0.007*"#closingceremony" + 0.006*"#birmingham2022" + 0.006*"#gc2018" + 0.005*"absolutely" + 0.005*"watching"')
+(9, '0.040*"http" + 0.019*"#closingceremony" + 0.011*"#gc2018" + 0.008*"look" + 0.007*"today" + 0.007*"would"')
+/share/app/visu/venv3/lib/python3.5/site-packages/pyLDAvis/_prepare.py:387: DeprecationWarning: 
+.ix is deprecated. Please use
+.loc for label based indexing or
+.iloc for positional indexing
+
+See the documentation here:
+http://pandas.pydata.org/pandas-docs/stable/indexing.html#ix-indexer-is-deprecated
+  topic_term_dists = topic_term_dists.ix[topic_order]
+--- 26.17996048927307 seconds ---
+Process 27908 dead!
+Process 27908 detected

@@ -24,6 +24,6 @@
 #  tasks:
 #  - name: activate bash insulter
 #    blockinfile:
-#      block: "{{lookup('file','./insulter')}}"
+#      block: "ect"
 #      dest: "/etc/bash.bashrc"
 #    become: yes
