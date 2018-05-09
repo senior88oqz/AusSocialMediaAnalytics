@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/lib/bootstrap.min.css">
+  <style>
+    #chart {
+      height: calc(100% - 72px);
+      width: 100%;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #pannel {
+      height: 56px;
+      padding: 1rem 2rem 0;
+    }
+  </style>
+</head>
+<body>
+<div id="pannel">
+  <label class="mr-4">
+    Select City
+    <select id="city-select">
+      <option value="Melbourne">VIC - Melbourne</option>
+      <option value="Sydney">NSW - Sydney</option>
+      <option value="Brisbane">QLD - Brisbane</option>
+      <option value="Perth">WA - Perth</option>
+      <option value="Adelaide">SA - Adelaide</option>
+    </select>
+  </label>
+</div>
+<div id="chart"></div>
+<script src="/lib/canvasjs.min.js"></script>
+<script src="/lib/jquery-3.3.1.min.js"></script>
+<script>
+    (function ($) {
+        $.getUrlParam = function (name, defval) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]);
+            return defval;
+        }
+    })(jQuery);
+
+    function callback(data) {
+        var city = $('#city-select').find("option:selected").attr('value');
+        var lans = data[city];
+        var dataPoints = [];
+        for (var lan in lans) {
+            var value = lans[lan];
+            dataPoints.push({
+                name: lan, y: value
+            });
+        }
+        dataPoints[0].exploded = true;
+        var title = 'Language Usage on Twitter - ';
+        if ($.getUrlParam('src') === 'aurin') {
+            title = 'Language Usage at Home - ';
+        }
+        var chart = new CanvasJS.Chart("chart", {
+            exportEnabled: true,
+            animationEnabled: true,
+            title: {
+                text: title + city
+            },
+            legend: {
+                cursor: "pointer",
+                itemclick: explodePie
+            },
+            data: [{
+                type: "pie",
+                showInLegend: true,
+                toolTipContent: "{name}: <strong>{y}</strong>",
+                indexLabel: "{name} - {y}",
+                dataPoints: dataPoints
+            }]
+        });
+        chart.render();
+    }
+
+    $('#city-select').change(function (e) {
+        if ($.getUrlParam('src') === 'aurin') {
+            $.getJSON('/data/static/aurin_lang_all_ct.json', callback);
+        } else {
+            $.getJSON('/data/cal_lang_all_ct.json', callback);
+        }
+
+    }).trigger('change');
+
+    function explodePie(e) {
+        if (typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+            e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+        } else {
+            e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+        }
+        e.chart.render();
+    }
+</script>
+</body>
+</html>

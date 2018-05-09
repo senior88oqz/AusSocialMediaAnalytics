@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+  <style>
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #pannel {
+      font-family: sans-serif;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: white;
+      border: grey 1px solid;
+      font-size: 18px;
+      padding: 0.75rem 1rem;
+      display: none;
+      width: 50vw;
+      max-width: 300px;
+      box-shadow: 3px 3px 10px #666;
+      opacity: 0.85;
+    }
+
+    #color-ruler {
+      height: 8px;
+      background: linear-gradient(to right,
+      hsl(5, 69%, 54%) 0%,
+      hsl(29, 71%, 51%) 17%,
+      hsl(54, 74%, 47%) 33%,
+      hsl(78, 76%, 44%) 50%,
+      hsl(102, 78%, 41%) 67%,
+      hsl(127, 81%, 37%) 83%,
+      hsl(151, 83%, 34%) 100%);
+    }
+
+    #minvalue {
+      color: hsl(5, 69%, 54%);
+    }
+
+    #maxvalue {
+      float: right;
+      color: hsl(151, 83%, 34%);
+    }
+
+    #pointer {
+      position: relative;
+      font-weight: bolder;
+    }
+
+    #value {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<div id="pannel">
+  <div>
+    <span id="minvalue">800</span>
+    <span id="maxvalue">1000</span>
+  </div>
+  <div id="color-ruler"></div>
+  <span id="pointer">^</span><br>
+  <span id="suburb"></span><span id="value"></span>
+</div>
+<script src="/lib/jquery-3.3.1.min.js"></script>
+<script>
+    (function ($) {
+        $.getUrlParam = function (name, defval) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]);
+            return defval;
+        }
+    })(jQuery);
+
+    function initMap() {
+        var lat = Number($.getUrlParam('lat'));
+        var lng = Number($.getUrlParam('lng'));
+        var zoom = Number($.getUrlParam('zoom', 12));
+        var geojson = $.getUrlParam('geojson');
+        var reverse = $.getUrlParam('reverse') === '1';
+
+        if (reverse) {
+            $('#color-ruler').css('background',
+                'linear-gradient(to left,\n' +
+                '      hsl(5, 69%, 54%) 0%,\n' +
+                '      hsl(29, 71%, 51%) 17%,\n' +
+                '      hsl(54, 74%, 47%) 33%,\n' +
+                '      hsl(78, 76%, 44%) 50%,\n' +
+                '      hsl(102, 78%, 41%) 67%,\n' +
+                '      hsl(127, 81%, 37%) 83%,\n' +
+                '      hsl(151, 83%, 34%) 100%)');
+            $('#maxvalue').css('color', 'hsl(5, 69%, 54%)');
+            $('#minvalue').css('color', 'hsl(151, 83%, 34%)');
+        }
+
+        function getcolor(ratio) {
+            if (reverse) {
+                ratio = 1 - ratio;
+            }
+            var low = [5, 69, 54];
+            var high = [151, 83, 34];
+            var color = [];
+            for (var i = 0; i < 3; i++) {
+                color[i] = (high[i] - low[i]) * ratio + low[i];
+            }
+            return 'hsl(' + color[0] + ',' + color[1] + '%,' + color[2] + '%)';
+        }
+
+        function styleFeature(feature) {
+            var outlineWeight = 0.5, zIndex = 1, strokeOpacity = 0.5, fillOpacity = 0.65;
+            if (feature.getProperty('state') === 'hover') {
+                outlineWeight = zIndex = 2;
+                strokeOpacity = 0.85;
+                fillOpacity = 0.85
+            }
+            return {
+                strokeWeight: outlineWeight,
+                strokeColor: '#666',
+                strokeOpacity: strokeOpacity,
+                zIndex: zIndex,
+                fillColor: getcolor(feature.f.ratio),
+                fillOpacity: fillOpacity
+            };
+        }
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: lat, lng: lng},
+            zoom: zoom,
+            styles: [
+                {
+                    "featureType": "administrative.land_parcel",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "labels.text",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.business",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "labels.text",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.arterial",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.local",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.local",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                }
+            ],
+            mapTypeControl: false,
+            streetViewControl: false
+        });
+
+        map.data.setStyle(styleFeature);
+        map.data.addListener('mouseover', function (e) {
+            e.feature.setProperty('state', 'hover');
+            var f = e.feature.f;
+            $('#pannel').css('display', 'block');
+            $('#suburb').text(f.Suburb_Name);
+            $('#value').text(f.text).css('color', getcolor(f.ratio));
+            $('#pointer').css('left', ('calc(' + f.ratio * 98) + '% - 5px + 1%)');
+        });
+        map.data.addListener('mouseout', function (e) {
+            e.feature.setProperty('state', 'normal');
+        });
+        map.data.loadGeoJson('/data/' + geojson);
+        $.getJSON('/data/' + geojson, function (data) {
+            $('#maxvalue').text(data.max_value_text);
+            $('#minvalue').text(data.min_value_text);
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9h5vCONERMJ9MNPJRCOvIdS-VDI41_Do&callback=initMap">
+</script>
+</body>
+</html>

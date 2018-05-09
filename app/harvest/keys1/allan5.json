@@ -1,0 +1,16 @@
+{
+  "name": "ALLAN-5",
+  "consumer_key": "vmvEuWAbTvXsy0efSauyYDijb",
+  "consumer_secret": "uD9ObR56TrfZ3QQucc9eDCVXqEk0QDV3kkxNoot5c2oGt5mhoC",
+  "access_token": "964639908110393344-fTGTW70KThMie1XWVACY3QFeEmeL9H1",
+  "access_secret": "bFBEcLVf8WN31engdwC2wtdS1qnyCKoYW5g7ZxVJGa2BP",
+  "stream_name": "VIC&T",
+  "stream_grid": [
+    141.0,
+    -43.5,
+    154.0,
+    -36.0
+  ],
+  "search_name": "QLD-N",
+  "search_geocode": "-20.06,143.86,686.4km"
+}

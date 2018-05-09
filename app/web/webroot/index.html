@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+  <title>Cloud Group Assignment</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/lib/bootstrap.min.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #title {
+      height: 72px;
+    }
+
+    iframe {
+      height: calc(100% - 72px);
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<div id="title" class="bg-dark text-light pt-4 px-5 d-flex justify-content-between">
+  <div>
+    <label for="page-selector-l"></label><select id="page-selector-l">
+    <optgroup label="ABS Data">
+      <option value="suburb.html?lat=-37.81&lng=144.95&geojson=static/ABS_mel_income.json">
+        Melb Avg. Weekly Income
+      </option>
+      <option value="suburb.html?lat=-33.84&lng=151.16&geojson=static/ABS_syd_income.json">
+        Sydney Avg. Weekly Income
+      </option>
+      <option value="suburb.html?lat=-37.81&lng=144.95&geojson=static/ABS_mel_volunteer.json">
+        Melb Volunteer Work Rate
+      </option>
+      <option value="suburb.html?lat=-33.84&lng=151.16&geojson=static/ABS_syd_volunteer.json">
+        Sydney Volunteer Work Rate
+      </option>
+    </optgroup>
+    <optgroup label="AURIN Data">
+      <option value="suburb.html?lat=-37.81&lng=144.95&geojson=static/aurin_mel_liquor.json">
+        Melb Liquor Licence Distribution
+      </option>
+      <option value="suburb.html?lat=-37.81&lng=144.95&geojson=static/aurin_mel_sport.json">
+        Melb Sport and Recreation Facilities
+      </option>
+      <option value="suburb.html?lat=-33.84&lng=151.16&geojson=static/aurin_syd_crime.json&reverse=1">
+        Sydney Crime Rate
+      </option>
+    </optgroup>
+    <optgroup label="Twitter Data">
+      <option value="suburb.html?lat=-37.81&lng=144.95&geojson=cal_mel_ssc.json">
+        Melb Positive Sentiment Rate
+      </option>
+      <option value="suburb.html?lat=-33.84&lng=151.16&geojson=cal_syd_ssc.json">
+        Sydney Positive Sentiment Rate
+      </option>
+      <option value="popularity.html">
+        Nationwide Twitter Popularity
+      </option>
+    </optgroup>
+    <optgroup label="Non-English Languages">
+      <option value="language.html?src=aurin">
+        Languages at Home (AURIN)
+      </option>
+      <option value="language.html">
+        Languages on Twitter
+      </option>
+    </optgroup>
+    <optgroup label="Other Views">
+      <option value="time.html">
+        Twitter - Time Chart
+      </option>
+      <option value="topics.html">
+        Twitter Topic Words
+      </option>
+      <option value="harvester.html">
+        Harvester Status
+      </option>
+    </optgroup>
+  </select>
+  </div>
+  <div>
+    Last update: <span id="update"></span>
+  </div>
+  <div>
+    <label for="page-selector-r"></label><select id="page-selector-r">
+    <optgroup label="Hidden">
+      <option value="">Select Right View...</option>
+    </optgroup>
+  </select>
+  </div>
+</div>
+<div class="row h-100 m-0">
+  <div class="col p-0">
+    <iframe id="iframe-l"></iframe>
+  </div>
+  <div id="col-r" class="col p-0">
+    <iframe id="iframe-r"></iframe>
+  </div>
+</div>
+<script src="/lib/jquery-3.3.1.min.js"></script>
+<script>
+    var selector_l = $('#page-selector-l');
+    selector_l.change(function (e) {
+        var src = '/iframe/' + $('#page-selector-l').find("option:selected").attr('value');
+        $('#iframe-l').attr('src', src);
+    }).trigger('change');
+    $('#page-selector-r').append(selector_l.find("optgroup").clone()).change(function (e) {
+        var value = $('#page-selector-r').find("option:selected").attr('value');
+        if (!value) {
+            $('#col-r').addClass('d-none');
+        } else {
+            $('#col-r').removeClass('d-none');
+            var src = '/iframe/' + value;
+            $('#iframe-r').attr('src', src);
+        }
+    }).trigger('change');
+
+    $.getJSON('/data/meta.json', function (data) {
+        $('#update').text(data.update);
+    })
+</script>
+</body>
+</html>

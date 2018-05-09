@@ -1,0 +1,16 @@
+{
+  "name": "ALLAN-2",
+  "consumer_key": "Dauz6buuzcG9X607exfeuDN3M",
+  "consumer_secret": "THEc7KVYC7CTkSfuP2hvriclUMZbn89gzQYwBuG0uGAAlhUckD",
+  "access_token": "964639908110393344-vp8rO7BPppVBmgdATQNaK9TIedOxArl",
+  "access_secret": "xdaEkhx6UByJNDILmkAsUrHkkceUKkfwdFWOiba2MHYAB",
+  "stream_name": "NT&SA",
+  "stream_grid": [
+    131.5,
+    -43.5,
+    141.0,
+    -10.5
+  ],
+  "search_name": "WA-NW",
+  "search_geocode": "-25.97,116.13,527.8km"
+}

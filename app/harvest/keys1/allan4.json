@@ -1,0 +1,16 @@
+{
+  "name": "ALLAN-4",
+  "consumer_key": "8LslIv17pMukdadeI9tUCeVET",
+  "consumer_secret": "17KzXVBSqB3XWQj4CQebIX6a0Iya4UbuqmVQkXpw1p6DPtf51n",
+  "access_token": "964639908110393344-E1WLtNPoVgHGFe3T7TcV43T72hfBL9x",
+  "access_secret": "WyZ6ZaG9ocQNQ1vKlCQiXrLoS1JXielWdozKUbBMwdLBh",
+  "stream_name": "NSW&C",
+  "stream_grid": [
+    141.0,
+    -36.0,
+    154.0,
+    -31.5
+  ],
+  "search_name": "NT-N ",
+  "search_geocode": "-14.94,132.95,452.4km"
+}

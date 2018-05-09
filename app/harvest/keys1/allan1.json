@@ -1,0 +1,16 @@
+{
+  "name": "ALLAN-1",
+  "consumer_key": "1xEPTAuZ8vkMWk9oXqN6vmpws",
+  "consumer_secret": "lfodZkhZ2NckTM6pQh0YdXQGV4jsmlHbYBxsCe6d6jbxQu27XX",
+  "access_token": "964639908110393344-ZWB2bVtqoFPf1yQsNtHbRSKoZGIHRzI",
+  "access_secret": "LZYI65Uuh99SYHAGkb9FtGnYR48ialSfJ2SPMXISVvUN4",
+  "stream_name": "WA   ",
+  "stream_grid": [
+    113.0,
+    -43.5,
+    131.5,
+    -10.5
+  ],
+  "search_name": "WA-SW",
+  "search_geocode": "-31.63,119.34,335.4km"
+}

@@ -1,0 +1,62 @@
+{
+  "Melbourne": {
+    "Portuguese": "320",
+    "Indonesian": "773",
+    "Chinese": "632",
+    "Turkish": "261",
+    "Japanese": "1452",
+    "French": "441",
+    "Tagalog": "1056",
+    "Spanish": "1012",
+    "Arabic": "2981",
+    "Thai": "879"
+  },
+  "Brisbane": {
+    "Portuguese": "334",
+    "Indonesian": "309",
+    "Japanese": "789",
+    "French": "367",
+    "Norwegian": "381",
+    "Tagalog": "1341",
+    "Spanish": "715",
+    "Polish": "154",
+    "Thai": "221",
+    "Arabic": "216"
+  },
+  "Perth": {
+    "Portuguese": "150",
+    "Indonesian": "306",
+    "Chinese": "122",
+    "Japanese": "211",
+    "French": "83",
+    "Tagalog": "763",
+    "Spanish": "184",
+    "Arabic": "517",
+    "Thai": "154",
+    "Italian": "157"
+  },
+  "Sydney": {
+    "Portuguese": "1300",
+    "Indonesian": "1709",
+    "Chinese": "356",
+    "Turkish": "484",
+    "Japanese": "620",
+    "French": "437",
+    "Tagalog": "1518",
+    "Spanish": "1398",
+    "Arabic": "908",
+    "Thai": "1007"
+  },
+  "Adelaide": {
+    "Portuguese": "37",
+    "Indonesian": "202",
+    "Estonian": "28",
+    "Chinese": "54",
+    "French": "47",
+    "Persian": "41",
+    "Tagalog": "159",
+    "Spanish": "83",
+    "Arabic": "187",
+    "Tamil": "30"
+  }
+}

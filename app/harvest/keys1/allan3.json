@@ -1,0 +1,16 @@
+{
+  "name": "ALLAN-3",
+  "consumer_key": "2Z6svPHRpvYLftOUmrRHk8uyN",
+  "consumer_secret": "yntRYWXW79CNUJZ2bL67jbWwmiu7bFfA3FhRkVkmklyWwkiXI7",
+  "access_token": "964639908110393344-FLgMH6sLcX26gXAaM8oYfpxB3jfcNWE",
+  "access_secret": "9nBs02MMbO9ycBaRO9bVqCoDHrx3u3zyHbjQqP4ZIv4yY",
+  "stream_name": "QLD  ",
+  "stream_grid": [
+    141.0,
+    -31.5,
+    154.0,
+    -10.5
+  ],
+  "search_name": "WA-NE",
+  "search_geocode": "-20.19,124.83,527.8km"
+}

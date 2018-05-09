@@ -1,0 +1,62 @@
+{
+  "Melbourne": {
+    "Cantones": "101388",
+    "Vietnamese": "101849",
+    "Punjabi": "57604",
+    "Spanish": "36279",
+    "Greek": "184977",
+    "Hindi": "52767",
+    "Sinhalese": "49446",
+    "Mandarin": "202452",
+    "Arabic": "76283",
+    "Italian": "107386"
+  },
+  "Brisbane": {
+    "Cantones": "19624",
+    "Vietnamese": "22573",
+    "Punjabi": "12982",
+    "Samoan": "13820",
+    "Hindi": "14560",
+    "Spanish": "14807",
+    "Mandarin": "53492",
+    "Korean": "13213",
+    "Arabic": "9884",
+    "Italian": "10015"
+  },
+  "Perth": {
+    "Cantones": "18830",
+    "Indonesian": "10119",
+    "Vietnamese": "19396",
+    "Punjabi": "11782",
+    "Hindi": "10166",
+    "Tagalog": "12336",
+    "Mandarin": "45658",
+    "Arabic": "13733",
+    "Afrikaans": "11393",
+    "Italian": "26759"
+  },
+  "Sydney": {
+    "Cantones": "138818",
+    "Vietnamese": "99301",
+    "Greek": "76201",
+    "Hindi": "64101",
+    "Tagalog": "40630",
+    "Spanish": "56929",
+    "Mandarin": "228985",
+    "Arabic": "194049",
+    "Korean": "57789",
+    "Italian": "62796"
+  },
+  "Adelaide": {
+    "Cantones": "9459",
+    "Vietnamese": "18563",
+    "Punjabi": "8498",
+    "Greek": "21464",
+    "Hindi": "7054",
+    "Spanish": "5402",
+    "Mandarin": "27591",
+    "Polish": "5493",
+    "Arabic": "9092",
+    "Italian": "27595"
+  }
+}

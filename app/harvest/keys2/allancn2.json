@@ -1,0 +1,11 @@
+{
+  "name": "CNINA-2",
+  "consumer_key": "lwiwVETftOVrTkXdzP4iYVGUX",
+  "consumer_secret": "BsccLO38Vo2nuXTDtMlDGJPXjO1qf8rjIlb56CrPiYGnzbZtpY",
+  "access_token": "768007699250327556-fSdizXZbbPUdrWQSf9nYsXAE7djSoFh",
+  "access_secret": "gPAe1awYDfLpczq45T11JXwz05ZYPOa65HsMSkV3q7dzY",
+  "stream_name": null,
+  "stream_grid": null,
+  "search_name": "ACT  ",
+  "search_geocode": "-36.39,148.07,244.4km"
+}

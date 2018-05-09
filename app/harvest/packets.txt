@@ -1,0 +1,6 @@
+couchdb
+sqlitedict
+click
+psutil
+tweepy
+shapely[vectorized]
