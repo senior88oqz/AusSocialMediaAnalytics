@@ -1,0 +1,32 @@
+blas_mkl_info:
+  NOT AVAILABLE
+lapack_opt_info:
+    define_macros = [('HAVE_CBLAS', None)]
+    libraries = ['openblas', 'openblas']
+    library_dirs = ['/usr/local/lib']
+    language = c
+lapack_mkl_info:
+  NOT AVAILABLE
+blis_info:
+  NOT AVAILABLE
+openblas_info:
+    define_macros = [('HAVE_CBLAS', None)]
+    libraries = ['openblas', 'openblas']
+    library_dirs = ['/usr/local/lib']
+    language = c
+openblas_lapack_info:
+    define_macros = [('HAVE_CBLAS', None)]
+    libraries = ['openblas', 'openblas']
+    library_dirs = ['/usr/local/lib']
+    language = c
+blas_opt_info:
+    define_macros = [('HAVE_CBLAS', None)]
+    libraries = ['openblas', 'openblas']
+    library_dirs = ['/usr/local/lib']
+    language = c
+Dotted two 4096x4096 matrices in 4.80 s.
+Dotted two vectors of length 524288 in 0.57 ms.
+SVD of a 2048x1024 matrix in 2.89 s.
+Cholesky decomposition of a 2048x2048 matrix in 0.52 s.
+Eigendecomposition of a 2048x2048 matrix in 42.25 s.
+

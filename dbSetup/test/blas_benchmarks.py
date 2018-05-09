@@ -6,6 +6,8 @@ from __future__ import print_function
 import numpy as np
 from time import time
 
+np.__config__.show()
+
 # Let's take the randomness out of random numbers (for reproducibility)
 np.random.seed(0)
 

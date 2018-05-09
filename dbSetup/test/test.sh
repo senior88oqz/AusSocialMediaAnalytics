@@ -8,3 +8,6 @@ echo $IP $user
 #curl -XPOST "http://${user}:${pass}@localhost:5984/_cluster_setup" --header "Content-Type: application/json" --data '{"action": "finish_cluster"}'
 
 #curl http://${user}:${pass}@localhost:5984/_cluster_setup
+source /share/app/visu/venv3/bin/activate
+which python
+nohup time python  blas_benchmarks.py
