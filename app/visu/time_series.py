@@ -11,7 +11,7 @@ if __name__ == "__main__":
     print(db)
 
     dates_ITAvWAL = []
-    for item in db.view('_design/allan/_view/content-time', limit=1000):
+    for item in db.view('_design/dabao/_view/content-time'):
         dates_ITAvWAL.append(item.value['created_at'])
 
     print('number of tweets:', len(dates_ITAvWAL))
@@ -31,6 +31,7 @@ if __name__ == "__main__":
     time_chart = vincent.Line(per_minute)
 
     time_chart.axis_titles(x='Time', y='Freq')
-    time_chart.to_json('./out/time_chart.json')
+    time_chart.to_json('/share/app/web/webroot/data/time_chart.json')
+    time_chart.to_json('./time_chart.json')
     print("--- %s seconds ---" % (time.time() - start_time))
 

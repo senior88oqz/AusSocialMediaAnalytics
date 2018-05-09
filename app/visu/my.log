@@ -1,0 +1,46 @@
+<Database 'tweets'>
+number of tweets: 469397
+--- 380.2816650867462 seconds ---
+Process 29962 detected
+[nltk_data] Downloading package wordnet to /home/ubuntu/nltk_data...
+[nltk_data]   Unzipping corpora/wordnet.zip.
+[nltk_data] Downloading package stopwords to /home/ubuntu/nltk_data...
+[nltk_data]   Unzipping corpora/stopwords.zip.
+<Database 'tweets'>
+number of tweets: 469397
+(0, '0.015*"thank" + 0.013*"please" + 0.011*"australia" + 0.008*"coming" + 0.007*"fucking" + 0.005*"weekend"')
+(1, '0.029*"today" + 0.010*"right" + 0.007*"friend" + 0.006*"#auspol" + 0.006*"follow" + 0.006*"humidity"')
+(2, '0.016*"think" + 0.013*"really" + 0.013*"people" + 0.013*"going" + 0.012*"sydney" + 0.009*"morning"')
+(3, '0.008*"tweet" + 0.006*"final" + 0.006*"hahaha" + 0.006*"beach" + 0.005*"brisbane" + 0.005*"someone"')
+(4, '0.017*"still" + 0.007*"things" + 0.006*"need" + 0.006*"video" + 0.006*"though" + 0.006*"monday"')
+(5, '0.019*"thanks" + 0.014*"melbourne" + 0.014*"happy" + 0.013*"great" + 0.010*"#hiring" + 0.008*"#careerarc"')
+(6, '0.010*"night" + 0.009*"little" + 0.009*"tonight" + 0.007*"#sydney" + 0.007*"season" + 0.007*"awesome"')
+(7, '0.009*"check" + 0.006*"latest" + 0.006*"sound" + 0.005*"power" + 0.004*"write" + 0.004*"@anartdecodiva"')
+(8, '0.012*"would" + 0.011*"thought" + 0.011*"never" + 0.009*"photo" + 0.007*"amaze" + 0.007*"nothing"')
+(9, '0.007*"sorry" + 0.005*"@abcnews" + 0.005*"finish" + 0.004*"proud" + 0.004*"week" + 0.004*"love"')
+Process 29959 detected
+<Database 'tweets'>
+number of tweets: 484177
+--- 393.702250957489 seconds ---
+Process 31581 detected
+[nltk_data] Downloading package wordnet to /home/ubuntu/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to /home/ubuntu/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+<Database 'tweets'>
+number of tweets: 484177
+(0, '0.017*"would" + 0.012*"great" + 0.009*"always" + 0.009*"people" + 0.008*"still" + 0.008*"#auspol"')
+(1, '0.015*"australia" + 0.014*"budget" + 0.013*"going" + 0.009*"beautiful" + 0.008*"check" + 0.007*"need"')
+(2, '0.015*"thanks" + 0.009*"looking" + 0.006*"forward" + 0.005*"@billshortenmp" + 0.004*"perfect" + 0.004*"anything"')
+(3, '0.013*"sydney" + 0.006*"house" + 0.006*"today" + 0.005*"woman" + 0.005*"humidity" + 0.005*"student"')
+(4, '0.010*"melbourne" + 0.007*"sorry" + 0.007*"enjoy" + 0.006*"fucking" + 0.005*"since" + 0.005*"sleep"')
+(5, '0.013*"thank" + 0.009*"australian" + 0.009*"agree" + 0.008*"amaze" + 0.007*"pretty" + 0.007*"interest"')
+(6, '0.020*"#budget2018" + 0.015*"happy" + 0.011*"world" + 0.008*"night" + 0.007*"australia" + 0.007*"birthday"')
+(7, '0.010*"better" + 0.008*"watching" + 0.008*"anyone" + 0.008*"right" + 0.007*"#hiring" + 0.006*"can\'t"')
+(8, '0.012*"never" + 0.008*"today" + 0.008*"point" + 0.007*"support" + 0.007*"tweet" + 0.007*"nothing"')
+(9, '0.016*"really" + 0.014*"first" + 0.013*"think" + 0.010*"watch" + 0.010*"thing" + 0.010*"another"')
+Process 31578 detected
+<Database 'tweets'>
+number of tweets: 485900
+--- 414.1626319885254 seconds ---
+Process 1406 detected

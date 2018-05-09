@@ -1,10 +1,10 @@
-# coding: utf-8
+#coding: utf-8
 import couchdb
 import gensim
 import nltk
 import re
 import time
-# import pickle
+import pickle
 import pyLDAvis.gensim
 nltk.download('wordnet')
 nltk.download('stopwords')
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     print(db)
 
     text_data = []
-    for item in db.view('_design/allan/_view/content-time', limit=1000):
+    for item in db.view('_design/dabao/_view/content-time'):
         token = prepare_text_for_lda(item.value['text'])
         # print(token)
         text_data.append(token)
@@ -86,23 +86,24 @@ if __name__ == "__main__":
     dictionary = corpora.Dictionary(text_data)
     corpus = [dictionary.doc2bow(text) for text in text_data]
 
-    # pickle.dump(corpus, open('corpus.pkl', 'wb'))
-    # dictionary.save('dictionary.gensim')
+    pickle.dump(corpus, open('corpus.pkl', 'wb'))
+    dictionary.save('dictionary.gensim')
 
     NUM_TOPICS = 10
     ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=NUM_TOPICS,
                                                id2word=dictionary, passes=15)
-    # ldamodel.save('model5.gensim')
+    ldamodel.save('model5.gensim')
     topics = ldamodel.print_topics(num_words=6)
     for topic in topics:
         print(topic)
 
-    # dictionary = gensim.corpora.Dictionary.load('dictionary.gensim')
-    # corpus = pickle.load(open('corpus.pkl', 'rb'))
-    # lda = gensim.models.ldamodel.LdaModel.load('model5.gensim')
+    dictionary = gensim.corpora.Dictionary.load('dictionary.gensim')
+    corpus = pickle.load(open('corpus.pkl', 'rb'))
+    lda = gensim.models.ldamodel.LdaModel.load('model5.gensim')
 
     lda_display = pyLDAvis.gensim.prepare(ldamodel, corpus, dictionary,
                                           sort_topics=False)
-    # pyLDAvis.show(lda_display)
-    pyLDAvis.save_html(lda_display, './out/topics.html')
+    #  pyLDAvis.show(lda_display)
+    pyLDAvis.save_html(lda_display, '/share/app/web/webroot/iframe/out/topics.html')
+    pyLDAvis.save_html(lda_display, './topics.html')
     print("--- %s seconds ---" % (time.time() - start_time))
