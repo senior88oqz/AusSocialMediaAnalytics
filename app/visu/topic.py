@@ -97,13 +97,13 @@ if __name__ == "__main__":
     for topic in topics:
         print(topic)
 
-    dictionary = gensim.corpora.Dictionary.load('dictionary.gensim')
-    corpus = pickle.load(open('corpus.pkl', 'rb'))
-    lda = gensim.models.ldamodel.LdaModel.load('model5.gensim')
+    #dictionary = gensim.corpora.Dictionary.load('dictionary.gensim')
+    #corpus = pickle.load(open('corpus.pkl', 'rb'))
+    #lda = gensim.models.ldamodel.LdaModel.load('model5.gensim')
 
     lda_display = pyLDAvis.gensim.prepare(ldamodel, corpus, dictionary,
                                           sort_topics=False)
     #  pyLDAvis.show(lda_display)
-    pyLDAvis.save_html(lda_display, '/share/app/web/webroot/iframe/out/topics.html')
+    pyLDAvis.save_html(lda_display, '/share/app/web/webroot/iframe/topics.html')
     pyLDAvis.save_html(lda_display, './topics.html')
     print("--- %s seconds ---" % (time.time() - start_time))

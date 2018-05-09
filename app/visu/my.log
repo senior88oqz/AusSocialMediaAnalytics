@@ -44,3 +44,20 @@ Process 31578 detected
 number of tweets: 485900
 --- 414.1626319885254 seconds ---
 Process 1406 detected
+[nltk_data] Downloading package wordnet to /home/ubuntu/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to /home/ubuntu/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+<Database 'tweets'>
+number of tweets: 485900
+(0, '0.007*"pretty" + 0.007*"woman" + 0.006*"can\'t" + 0.006*"we\'re" + 0.005*"#auspol" + 0.005*"@billshortenmp"')
+(1, '0.011*"never" + 0.010*"another" + 0.008*"still" + 0.008*"someone" + 0.007*"morning" + 0.007*"better"')
+(2, '0.024*"australia" + 0.015*"melbourne" + 0.015*"budget" + 0.015*"sydney" + 0.008*"watching" + 0.006*"house"')
+(3, '0.019*"#budget2018" + 0.016*"happy" + 0.009*"#sydney" + 0.007*"birthday" + 0.006*"fucking" + 0.005*"break"')
+(4, '0.011*"please" + 0.010*"people" + 0.008*"change" + 0.006*"australian" + 0.006*"could" + 0.006*"video"')
+(5, '0.011*"beautiful" + 0.009*"photo" + 0.008*"look" + 0.007*"sorry" + 0.006*"@abcnews" + 0.006*"anything"')
+(6, '0.017*"would" + 0.016*"right" + 0.013*"thank" + 0.012*"always" + 0.011*"watch" + 0.010*"little"')
+(7, '0.011*"first" + 0.011*"night" + 0.009*"great" + 0.008*"tonight" + 0.007*"years" + 0.006*"amaze"')
+(8, '0.032*"today" + 0.008*"humidity" + 0.007*"temperature" + 0.007*"love" + 0.005*"slowly" + 0.005*"fall"')
+(9, '0.023*"great" + 0.019*"thanks" + 0.010*"#hiring" + 0.009*"really" + 0.008*"check" + 0.008*"#careerarc"')
+Process 1403 detected
