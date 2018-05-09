@@ -104,6 +104,6 @@ if __name__ == "__main__":
     lda_display = pyLDAvis.gensim.prepare(ldamodel, corpus, dictionary,
                                           sort_topics=False)
     #  pyLDAvis.show(lda_display)
+    pyLDAvis.save_html(lda_display, '/share/app/visu/topics.html')
     pyLDAvis.save_html(lda_display, '/share/app/web/webroot/iframe/topics.html')
-    pyLDAvis.save_html(lda_display, './topics.html')
     print("--- %s seconds ---" % (time.time() - start_time))

@@ -31,7 +31,7 @@ if __name__ == "__main__":
     time_chart = vincent.Line(per_minute)
 
     time_chart.axis_titles(x='Time', y='Freq')
+    time_chart.to_json('/share/app/visu/time_chart.json')
     time_chart.to_json('/share/app/web/webroot/data/time_chart.json')
-    time_chart.to_json('./time_chart.json')
     print("--- %s seconds ---" % (time.time() - start_time))
 
