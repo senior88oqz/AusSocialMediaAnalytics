@@ -1,0 +1,32 @@
+---
+
+- hosts: demo
+  tasks:
+  - name: copying file with owner and permissions
+    copy:
+#      src: /home/khris/PycharmProjects/AusSocialMediaAnalytics/serverSetup/controlMachine/demo/remote/deSetup2.sh
+      src: /home/khris/remote/dbSetup2.sh
+      dest: ~/.
+      owner: ubuntu
+      group: ubuntu
+      mode: 755
+
+
+  - name: copying file with owner and permissions
+    copy:
+#      src: /home/khris/PycharmProjects/AusSocialMediaAnalytics/serverSetup/controlMachine/demo/remote/deSetup2.sh
+      src: /home/khris/remote/installDocker.sh
+      dest: ~/.
+      owner: ubuntu
+      group: ubuntu
+      mode: 755
+
+
+  - name: copying file with owner and permissions
+    copy:
+#      src: /home/khris/PycharmProjects/AusSocialMediaAnalytics/serverSetup/controlMachine/demo/remote/deSetup2.sh
+      src: /home/khris/remote/listDB.sh
+      dest: ~/.
+      owner: ubuntu
+      group: ubuntu
+      mode: 755
