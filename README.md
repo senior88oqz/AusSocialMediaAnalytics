@@ -7,4 +7,7 @@
   - Twitter data visualization
 - web
   - web application
-
+![demo1](./webDemo/harvester.png)
+![demo2](./webDemo/sentimentVincome.png)
+![demo3](./webDemo/topicmodel.png)
+![demo4](./webDemo/visu.png)
